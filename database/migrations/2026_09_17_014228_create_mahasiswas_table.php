@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('nim');
+            $table->string('nim', 10)->unique();
             $table->string('prodi');
             $table->string('angkatan');
             $table->string('jenis_kelamin');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('alamat');
             $table->string('no_telepon');
-            $table->string('no_ktp');
+            $table->string('no_ktp', 16)->unique();
             $table->string('foto_profil');
             $table->timestamps();
         });
